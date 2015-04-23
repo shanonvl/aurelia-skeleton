@@ -1,3 +1,31 @@
 <template>
-  <router-view></router-view>
+  <div class="container">
+    <section>
+      <h1>
+        <router-view></router-view>
+      </h1>
+      <ul>
+        <li><a href="#i18n">i18n Examples</a></li>
+      </ul>
+    </section>
+    <section>
+      <h3>i18n Examples</h3>
+
+      <div>
+        Locale files are stored in <code>src/i18n/&lt;language/&lt;namespace>.json</code> and currently fallback to
+        english / <code>en</code>.
+        <ul>
+          <li>No Variable:
+            <blockquote>${'title' | t}</blockquote>
+          </li>
+          <li>Variable from ViewModel:
+            <blockquote>${'greeting' | t: { name: name }}</blockquote>
+          </li>
+          <li>Date: ${ now | df }</li>
+          <li>$${ 1234567.890 | nf : { style: 'currency', currency: 'EUR' } : 'de'}</li>
+          <li>Nested properties: ${ 'foo.bar' | t}</li>
+        </ul>
+      </div>
+    </section>
+  </div>
 </template>

@@ -9,6 +9,19 @@ import 'bootstrap/css/bootstrap.css!';
  */
 @inject(Router)
 export class App {
+
+  /**
+   * The application name.
+   * @type {string}
+   */
+  name = 'Aurelia App';
+
+  /**
+   * Current timestamp
+   * @type {Date}
+   */
+  now = new Date();
+
   /**
    * Creates a new instance of this object.
    * @param router the root router.

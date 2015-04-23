@@ -8,12 +8,6 @@ import {Router} from 'aurelia-router';
 export class Welcome {
 
   /**
-   * The name of the person to welcome.
-   * @type {string}
-   */
-  name = 'John Smith'
-
-  /**
    * Creates a new instance of this object.
    * @param router component router
    */

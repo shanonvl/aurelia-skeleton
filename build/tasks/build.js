@@ -29,6 +29,13 @@ gulp.task('build-html', function () {
     .pipe(gulp.dest(paths.output));
 });
 
+// copies locale files to the output directory
+gulp.task('build-i18n', function() {
+  return gulp.src(paths.i18n)
+    .pipe(changed(paths.output, {extension: '.json'}))
+    .pipe(gulp.dest(paths.output + '/' + paths.i18nPath));
+});
+
 // this task calls the clean task (located
 // in ./clean.js), then runs the build-system
 // and build-html tasks in parallel
@@ -36,7 +43,7 @@ gulp.task('build-html', function () {
 gulp.task('build', function(callback) {
   return runSequence(
     'clean',
-    ['build-system', 'build-html'],
+    ['build-system', 'build-html', 'build-i18n'],
     callback
   );
 });
