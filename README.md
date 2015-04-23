@@ -2,11 +2,25 @@
 
 Skeleton for Aurelia development
 
+## Installation
+
+Run the following commands to install and run the skeleton.
+
+*This will create a `aurelia-skeleton` sub-directory where executed*
+
+```
+git clone https://github.com/shanonvl/aurelia-skeleton && cd aurelia-skeleton
+npm start  
+```
+
+Open a browser to `http://localhost:9000`.
+
 ## Annotated Directory Structure
 
 ```
 .
 ├── LICENSE
+├── README.md
 ├── aurelia.protractor.js
 ├── build
 │   ├── args.js
@@ -35,7 +49,7 @@ Skeleton for Aurelia development
     ├── appConfig.js       # Application config
     ├── plugins            # Plugins
     │   └── helloWorld.js  # Sample plugin
-    └── welcome            # Welcome Component
+    └── welcome            # Welcome component
         ├── welcome.html  
         └── welcome.js
 ```

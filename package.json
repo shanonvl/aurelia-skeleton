@@ -8,6 +8,11 @@
     "type": "git",
     "url": "http://github.com/shanonvl/aurelia-skeleton"
   },
+  "scripts": {
+    "postinstall": "[ -e ./jspm_packages ] || jspm install -y",
+    "start": "npm install; ./node_modules/.bin/gulp serve",
+    "watch": "./node_modules/.bin/gulp watch"
+  },
   "dependencies": {
     "aurelia-tools": "^0.1.3",
     "browser-sync": "^1.8.1",
