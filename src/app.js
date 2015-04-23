@@ -1,11 +1,18 @@
+"use strict";
 import {inject, LogManager} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
 
-
+/**
+ * The top-level application entry point.
+ */
 @inject(Router)
 export class App {
+  /**
+   * Creates a new instance of this object.
+   * @param router the root router.
+   */
   constructor(router) {
     var log = this.log = LogManager.getLogger('app');
     log.debug('Configuring application.');
@@ -13,7 +20,7 @@ export class App {
     this.router.configure(config => {
       config.title = 'Aurelia';
       config.map([
-        { route: ['','welcome'],  moduleId: './welcome/welcome',      nav: true, title:'Welcome' }
+        {route: ['', 'welcome'], moduleId: './welcome/welcome', nav: true, title: 'Welcome'}
       ]);
     });
   }
