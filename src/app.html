@@ -43,7 +43,7 @@
             <blockquote>${'greeting' | t: { name: name }}</blockquote>
           </li>
           <li>Date: ${ now | df }</li>
-          <li>German Date <code>de</code>: ${ now | df : 'de'}</li>
+          <li>German Date <code>de</code>: ${ now | df : {} : 'de'}</li>
           <li>Current locale, displaying EUR: ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR' } }</li>
           <li>German locale <code>de</code>, displaying EUR: ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR'
             } : 'de' }
