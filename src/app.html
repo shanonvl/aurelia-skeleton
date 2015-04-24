@@ -9,6 +9,17 @@
       </ul>
     </section>
     <section>
+      <h3>Highcharts Examples</h3>
+
+      <div>
+        <ul>
+          <li>
+            <div data-chart.bind="chartConfigCsv">The chart will go here.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section>
       <h3>i18n Examples</h3>
 
       <div>
@@ -23,8 +34,10 @@
           </li>
           <li>Date: ${ now | df }</li>
           <li>German Date <code>de</code>: ${ now | df : 'de'}</li>
-          <li>Current locale, displaying EUR:  ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR' } }</li>
-          <li>German locale <code>de</code>, displaying EUR:  ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR' } : 'de' }</li>
+          <li>Current locale, displaying EUR: ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR' } }</li>
+          <li>German locale <code>de</code>, displaying EUR: ${ 1234567.890 | nf : { style: 'currency', currency: 'EUR'
+            } : 'de' }
+          </li>
           <li>Nested properties: ${ 'foo.bar' | t}</li>
         </ul>
       </div>

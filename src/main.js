@@ -1,4 +1,8 @@
 "use strict";
+import {LogManager} from 'aurelia-framework';
+import {ConsoleAppender} from 'aurelia-logging-console';
+
+import {SprintfConsoleAppender} from 'shanonvl/aurelia-logging-console';
 import {I18N} from 'zewa666/aurelia-i18next';
 
 /**
@@ -7,11 +11,17 @@ import {I18N} from 'zewa666/aurelia-i18next';
  */
 export function configure(aurelia) {
 
+  LogManager.addAppender(new ConsoleAppender());
+  LogManager.setLevel(LogManager.levels.debug);
+
   aurelia.use
     .standardConfiguration()
-    .developmentLogging()
     // sample plugin: http://aurelia.io/docs.html#plugins
     .plugin("./plugins/helloWorld",{
+      foo:'bar',
+      bar:'BAZ!'
+    })
+    .plugin("./plugins/highcharts/index",{
       foo:'bar',
       bar:'BAZ!'
     })

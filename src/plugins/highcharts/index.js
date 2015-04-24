@@ -1,13 +1,20 @@
-"use strict";
 import {LogManager} from 'aurelia-framework';
 import $ from 'components/jquery';
 
-let log = LogManager.getLogger('plugins.HelloWorldPlugin');
+/**
+ * The plugin id.
+ * @type {string}
+ */
+var pluginId = 'plugins.highcharts',
+    log = LogManager.getLogger(pluginId),
+    defaultConfig = {
+
+    };
 
 /**
  * @namespace plugins.HelloWorldPlugin
  */
-class HelloWorldPlugin {
+class HighchartsPlugin {
 
   /**
    * Creates a new instance of this object.
@@ -20,9 +27,15 @@ class HelloWorldPlugin {
 
   init(config) {
     $.extend(this.config, config || {});
-    log.debug('Initialized plugin: %s',this);
+    log.debug('Initialized plugin: %s, config: %s', this, JSON.stringify(this.config));
+
+    // enables the custom attributes on all pages w/out explicit include.
+    this.aurelia.globalizeResources('./attributes/dataHighchartUrl');
+
     return this;
   }
+
+
 }
 
 /**
@@ -32,5 +45,14 @@ class HelloWorldPlugin {
  * @return promise or `null`.
  */
 export function install(aurelia, config) {
-  new HelloWorldPlugin(aurelia).init(config);
+
+  return new Promise((resolve, reject) => {
+    try {
+      resolve(new HighchartsPlugin(aurelia).init(config));
+    }
+    catch (e) {
+      reject(e);
+    }
+  });
+
 }
