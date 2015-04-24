@@ -5,22 +5,32 @@
         <router-view></router-view>
       </h1>
       <ul>
+        <li><a href="#charting">Charting Examples</a></li>
         <li><a href="#i18n">i18n Examples</a></li>
       </ul>
     </section>
     <section>
-      <h3>Highcharts Examples</h3>
+      <h3 id="charting">Charting Examples</h3>
 
       <div>
         <ul>
           <li>
-            <div data-chart.bind="chartConfigCsv">The chart will go here.</div>
+            <section>
+              <h3>Static Data</h3>
+              <div data-chart.bind="chartConfig">The chart will go here.</div>
+            </section>
+          </li>
+          <li>
+            <section>
+              <h3>Async CSV from a data feed</h3>
+              <div data-chart.bind="chartConfigCsv">The chart will go here.</div>
+            </section>
           </li>
         </ul>
       </div>
     </section>
     <section>
-      <h3>i18n Examples</h3>
+      <h3 id="i18n">i18n Examples</h3>
 
       <div>
         Locale files are stored in <code>src/i18n/&lt;language/&lt;namespace>.json</code> and currently fallback to
